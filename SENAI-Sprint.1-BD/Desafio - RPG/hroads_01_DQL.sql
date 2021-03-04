@@ -15,6 +15,9 @@ FROM Classes;
 SELECT Nome AS Habilidades
 FROM Habilidades;
 
+-- Realizando a contagem de quantas habilidades estão cadastradas
+SELECT COUNT(idPersonagem) FROM Personagens;
+
 -- Selecionando todos os id's das habilidades em ordem crescente
 SELECT idHabilidades
 FROM Habilidades
@@ -24,6 +27,40 @@ ORDER BY idHabilidades ASC;
 SELECT * FROM Tipo;
 
 -- Selecionando todas as habilidades e os tipos de habilidades que elas fazem parte
-SELECT * FROM Habilidades;
+SELECT Habilidades.Nome AS Habilidades, Tipo.Nome AS [Tipos de Habilidades] FROM Habilidades
+LEFT JOIN Tipo
+ON Habilidades.idTipo = Tipo.idTipo;
 
 -- Selecionando todos os personagens e suas respectivas classes
+SELECT Personagens.Nome AS Personagem,[Capacidade maxima Vida], [Capacidade maxima Mana], [Data de Atualização], [Data de criação], Classes.Nome AS Classe FROM Personagens
+LEFT JOIN Classes
+ON Personagens.idClasse = Classes.idClasse;
+
+-- Selecionando todos os personagens e as classes (mesmo que elas não tenham correspondência em personagens)
+SELECT Personagens.Nome AS Personagem, Classes.Nome AS Classe FROM Personagens
+FULL OUTER JOIN Classes
+ON Personagens.idClasse = Classes.idClasse;
+
+-- Selecionando todas as classes e suas respectivas habilidades
+SELECT Classes.Nome AS Classe, Habilidades.Nome AS Habilidades FROM ClasseHabilidade
+LEFT JOIN Classes
+ON Classes.idClasse = ClasseHabilidade.idClasse
+LEFT JOIN Habilidades
+ON Habilidades.idHabilidades = ClasseHabilidade.idHabilidades;
+
+-- Selecionar todas as habilidades e suas classes (somente as que possuem correspondência)
+SELECT Habilidades.Nome AS Habilidades, Classes.Nome AS Classe FROM ClasseHabilidade
+INNER JOIN Habilidades
+ON Habilidades.idHabilidades = ClasseHabilidade.idHabilidades
+INNER JOIN Classes
+ON Classes.idClasse = ClasseHabilidade.idClasse;
+
+-- Selecionar todas as habilidades e suas classes (mesmo que elas não tenham correspondência)
+SELECT Habilidades.Nome AS Habilidades, Classes.Nome AS Classe FROM ClasseHabilidade
+FULL OUTER JOIN Habilidades
+ON Habilidades.idHabilidades = ClasseHabilidade.idHabilidades
+FULL OUTER JOIN Classes
+ON Classes.idClasse = ClasseHabilidade.idClasse;
+
+
+
