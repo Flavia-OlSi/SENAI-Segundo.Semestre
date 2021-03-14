@@ -8,21 +8,21 @@ Use PClinics;
 Create Table Tipo
 (
 	idTipo		INT	Primary Key Identity,
-	Nome		varchar(150) NOT NULL
+	Nome		VARCHAR(150) NOT NULL
 );
 
 -- Criando a tabela Dono
 Create Table Dono
 (
 	idDono		INT	Primary Key Identity,
-	Nome		varchar(150) NOT NULL
+	Nome		VARCHAR(150) NOT NULL
 );
 
 -- Criando a tabela Raça
 Create Table Raca
 (
 	idRaca		INT	Primary Key Identity,
-	Nome		varchar(150) NOT NULL,
+	Nome		VARCHAR(150) NOT NULL,
 	idTipo		INT Foreign Key References Tipo (idTipo)
 );
 
@@ -30,16 +30,16 @@ Create Table Raca
 Create Table Clinica
 (
 	idClinica	INT	Primary Key Identity,
-	Nome		varchar(200) NOT NULL,
-	CNPJ		INT NOT NULL,
-	Endereco	varchar(350) NOT NULL
+	Nome		VARCHAR(200) NOT NULL,
+	CNPJ		CHAR(18) NOT NULL,
+	Endereco	VARCHAR(350) NOT NULL
 );
 
 -- Criando a tabela Veteninario
 Create Table Veteninario
 (
 	idVeteninario	INT	Primary Key Identity,
-	Nome			varchar(150) NOT NULL,
+	Nome			VARCHAR(150) NOT NULL,
 	idClinica		INT Foreign Key References Clinica (idClinica)
 );
 
@@ -47,7 +47,7 @@ Create Table Veteninario
 Create Table Pets
 (
 	idPet				INT	Primary Key Identity,
-	Nome				varchar(150) NOT NULL,
+	Nome				VARCHAR(150) NOT NULL,
 	DataDeNascimento	DATE NOT NULL,
 	idRaca				INT Foreign Key References Raca (idRaca)
 );
@@ -66,20 +66,4 @@ Create Table Atendimento
 	DataDeAtendimento	DATE NOT NULL,
 	idPet				INT Foreign Key References Pets (idPet)
 );
-
--- Selecionando e usando o banco de datas PClinics
-Use PClinics;
-
--- Inserindo dados nas tabelas
-INSERT INTO Clinica	(Nome, CNPJ, Endereco)
-VALUES				('Pets', 0553346, 'Rua Batuíra, 893 - SBC'),
-					('DogMiau', 3067019, 'Av. Lemos Monteiro, 82 - SCS'),
-					('Cobasi', 5315260, 'Rua Guilhermina, 550 - SA');
-
-INSERT INTO Veteninario	(Nome, idClinica)
-VALUES					('Flávia', 2),
-						('Isabella', 1),
-						('Gabriel', 3);
-
-select * from Clinica;
 
