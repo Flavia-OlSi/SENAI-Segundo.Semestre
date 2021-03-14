@@ -39,16 +39,16 @@ Create Table Subcategoria
 Create Table Produto
 (
 	idProduto		INT	Primary Key Identity,
-	Identificacao	varchar(200) NOT NULL,
+	[Identificação]	varchar(200) NOT NULL,
 	idSubcategoria	INT Foreign Key References Subcategoria (idSubcategoria)
 );
 
 -- Criando a tabela Pedido
 Create Table Pedido
 (
-	idPedido			INT	Primary Key Identity,
-	DataPedido			DATE NOT NULL,
-	idCliente			INT Foreign Key References Cliente (idCliente),
-	idProduto			INT Foreign Key References Produto (idProduto)
+	idPedido		INT	Primary Key Identity,
+	[Data]			DATE NOT NULL,
+	idCliente		INT Foreign Key References Cliente (idCliente),
+	idProduto		INT Foreign Key References Produto (idProduto)
 );
 
