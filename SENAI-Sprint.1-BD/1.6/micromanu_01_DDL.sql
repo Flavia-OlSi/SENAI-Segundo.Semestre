@@ -1,61 +1,53 @@
 -- Criando o banco de dados micromanu
-Create Database Micromanu;
+CREATE DATABASE Micromanu;
 
 -- Selecionando e usando o banco de datas micromanu
-Use Micromanu;
+USE Micromanu;
 
 -- Criando a tabela Cliente
-Create Table Cliente
+CREATE TABLE Cliente
 (
 	idCliente	INT	Primary Key Identity,
-	Nome		varchar(150) NOT NULL,
-	CPF			INT NOT NULL
+	Nome		VARCHAR(150) NOT NULL,
+	Cpf			VARCHAR(20) NOT NULL
 );
 
 -- Criando a tabela Funcionario
-Create Table Funcionario
+CREATE TABLE Funcionario
 (
 	idFuncionario	INT	Primary Key Identity,
-	Nome			varchar(150) NOT NULL,
+	Nome			VARCHAR(150) NOT NULL,
 );
 
 -- Criando a tabela Item
-Create Table Item
+CREATE TABLE Item
 (
 	idItem		INT	Primary Key Identity,
-	Descricao	varchar(250) NOT NULL,
+	[Descrição]	VARCHAR(250) NOT NULL,
 );
 
 -- Criando a tabela Tipo
-Create Table Tipo
+CREATE TABLE Tipo
 (
 	idTipo			INT	Primary Key Identity,
-	Identificacao	varchar(250) NOT NULL,
+	[Identificação]	VARCHAR(250) NOT NULL,
 );
 
 -- Criando a tabela Pedido
-Create Table Pedido
+CREATE TABLE Pedido
 (
 	idPedido			INT	Primary Key Identity,
-	DataInicio			DATE NOT NULL,
-	DataTermino			DATE NOT NULL,
+	[Data de ínicio]	DATE NOT NULL,
+	[Data de término]	DATE NOT NULL,
 	idCliente			INT Foreign Key References Cliente (idCliente),
 	idTipo				INT Foreign Key References Tipo (idTipo),
 	idItem				INT Foreign Key References Item (idItem)
 );
 
 -- Criando a tabela PedidoFuncionario
-Create Table PedidoFuncionario
+CREATE TABLE PedidoFuncionario
 (
 	idPedido			INT Foreign Key References Pedido (idPedido),
 	idFuncionario		INT Foreign Key References Funcionario (idFuncionario)
 );
 
--- Selecionando e usando o banco de datas micromanu
-Use Micromanu;
-
--- Inserindo dados na tabela Cliente
-INSERT INTO Cliente (Nome, CPF)
-VALUES				('José', 11122233344),
-					('Luiz', 44455566677),
-					('Marcos', 77788899900);
