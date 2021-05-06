@@ -1,15 +1,15 @@
 -- Selecionando o banco de dados
-Use SENAI_HROADS_MANHA;
+USE SENAI_HROADS_MANHA;
 
 -- Inserindo dados na tabela Tipo
-INSERT INTO Tipo	(Nome)
-VALUES				('Ataque'),
-					('Defesa'),
-					('Cura'),
-					('Magia');
+INSERT INTO TiposDeHabilidades	(Nome)
+VALUES							('Ataque'),
+								('Defesa'),
+								('Cura'),
+								('Magia');
 
 -- Inserindo dados na tabela Habilidades
-INSERT INTO Habilidades	(Nome, idTipo)
+INSERT INTO Habilidades	(Nome, idTipoDeHabilidade)
 VALUES					('Lança Mortal', 1),
 						('Escudo Supremo', 2),
 						('Recuperar Vida', 3);
@@ -34,6 +34,13 @@ VALUES							(1, 1),
 								(4, 3),
 								(6, 3);
 
+-- Inserindo dados na tabela TiposDeUsuarios
+INSERT INTO	TiposDeUsuarios	(Nome)
+VALUES						('Administrador'),
+							('Jogador');
+
+-- Inserindo dados na tabela Usuarios
+INSERT INTO
 
 -- Inserindo dados na tabela Personagens
 INSERT INTO Personagens	(Nome, [Capacidade maxima Vida], [Capacidade maxima Mana], [Data de Atualização], [Data de criação], idClasse)

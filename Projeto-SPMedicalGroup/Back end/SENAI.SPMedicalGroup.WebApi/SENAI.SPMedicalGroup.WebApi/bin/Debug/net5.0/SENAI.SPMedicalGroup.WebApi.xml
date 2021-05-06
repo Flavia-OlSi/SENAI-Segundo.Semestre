@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SENAI.SPMedicalGroup.WebApi</name>
+    </assembly>
+    <members>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.ClinicasController._clinicasRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ClinicasController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ClinicasController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Clinicas)">
+            <summary>
+            Cadastra uma nova clinica
+            </summary>
+            <param name="novaClinica">Objeto novaClinica que será cadastrada</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController._consultasRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.Get">
+            <summary>
+            Lista todos os consultas
+            </summary>
+            <returns>Retorna uma lista de consultas e um status code</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.GetByPatient">
+            <summary>
+            Lista todas as consultas por paciente
+            </summary>
+            <returns>Retorna uma lista de consultas e um status code</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.GetByDoctor">
+            <summary>
+            Lista todas as consultas por médico
+            </summary>
+            <returns>Retorna uma lista de consultas e um status code</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Consultas)">
+            <summary>
+            Cadastra uma nova consulta
+            </summary>
+            <param name="novaConsulta">Objeto novaConsulta que será cadastrada</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.LoginController._usuariosRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.LoginController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController._medicosRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController.Get">
+            <summary>
+            Lista todos os médicos
+            </summary>
+            <returns>Retorna uma lista de médicos e um status code</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Medicos)">
+            <summary>
+            Cadastra um novo médico
+            </summary>
+            <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController._pacientesRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController.Get">
+            <summary>
+            Lista todos os pacientes
+            </summary>
+            <returns>Retorna uma lista de pacientes e um status code</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Pacientes)">
+            <summary>
+            Cadastra um novo paciente
+            </summary>
+            <param name="novoPaciente">Objeto novoPaciente que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.UsuariosController._usuariosRepository">
+            <summary>
+            Objeto que irá definir todos os métodos definidos  na interface
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia o objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.UsuariosController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Usuarios)">
+            <summary>
+            Cadastra um novo Usuario
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Clinicas">
+            <summary>
+            Classe que representa a entidade Clinicas
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Consultas">
+            <summary>
+            Classe que representa a entidade Consultas
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Especialidades">
+            <summary>
+            Classe que representa a entidade Especialidades
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Medicos">
+            <summary>
+            Classe que representa a entidade Medicos
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Pacientes">
+            <summary>
+            Classe que representa a entidade Pacientes
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Situacoes">
+            <summary>
+            Classe que representa a entidade Situações
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.TipoUsuarios">
+            <summary>
+            Classe que representa a entidade TipoUsuarios
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Usuarios">
+            <summary>
+            Classe que representa a entidade Usuarios
+            </summary>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IClinicasRepository">
+            <summary>
+            Interface responsável pelo repositório ClinicasRepository
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IClinicasRepository.Cadastrar(SENAI.SPMedicalGroup.WebApi.Domains.Clinicas)">
+            <summary>
+            Cadastra uma nova clinica
+            </summary>
+            <param name="novaClinica">Objeto novaClinica que será cadastrada</param>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository">
+            <summary>
+            Interface responsável pelo repositório ConsultasRepository
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.Cadastrar(SENAI.SPMedicalGroup.WebApi.Domains.Consultas)">
+            <summary>
+            Cadastra uma nova consulta
+            </summary>
+            <param name="novaConsulta">Objeto novaConsulta que será cadastrada</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizarStatus(System.Int32,System.String)">
+            <summary>
+            Atualiza os status da consulta
+            </summary>
+            <param name="id">id da consulta que será atualizada</param>
+            <param name="statusAtualizado">Objeto status atualizado que será atualizado</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizaDescricao(System.Int32,SENAI.SPMedicalGroup.WebApi.Domains.Consultas)">
+            <summary>
+            Atualiza a descrição da consulta
+            </summary>
+            <param name="id">id da consulta que será atualizada</param>
+            <param name="descricaoAtualizada">Objeto descrição que será atualizada</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.Listar">
+            <summary>
+            Lista todas as consultas
+            </summary>
+            <returns>Uma lista de consultas</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.ListarPorPaciente(System.Int32)">
+            <summary>
+            Lista todas as consultas por paciente
+            </summary>
+            <param name="id">Objeto idPaciente que identifica o paciente desejado</param>
+            <returns>Uma lista de consultas de um paciente</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.ListarPorMedico(System.Int32)">
+            <summary>
+            Lista todas as consultas por medico
+            </summary>
+            <param name="id">Objeto idMedico que identifica o medico desejado</param>
+            <returns>Uma lista de consultas de um médico</returns>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IMedicosRepository">
+            <summary>
+            Interface responsável pelo repositório MedicosRepository
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IMedicosRepository.Cadastrar(SENAI.SPMedicalGroup.WebApi.Domains.Medicos)">
+            <summary>
+            Cadastra um novo médico
+            </summary>
+            <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IMedicosRepository.Listar">
+            <summary>
+            Lista todos os médicos
+            </summary>
+            <returns>Retorna uma lista de médicos</returns>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IPacientesRepository">
+            <summary>
+            Interface responsável pelo repositório PacientesRepository
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IPacientesRepository.Cadastrar(SENAI.SPMedicalGroup.WebApi.Domains.Pacientes)">
+            <summary>
+            Cadastra um novo paciente
+            </summary>
+            <param name="novoPaciente">Objeto novoPaciente que será cadastrado</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IPacientesRepository.Listar">
+            <summary>
+            Lista todos os pacientes
+            </summary>
+            <returns>Retorna uma lista de pacientes</returns>
+        </member>
+        <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IUsuariosRepository">
+            <summary>
+            Interface responsável pelo repositório UsuariosRepository
+            </summary>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IUsuariosRepository.Cadastrar(SENAI.SPMedicalGroup.WebApi.Domains.Usuarios)">
+            <summary>
+            Cadastra um novo Usuario
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IUsuariosRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Um objeto do tipo Usuarios que foi buscado</returns>
+        </member>
+        <member name="F:SENAI.SPMedicalGroup.WebApi.Repositories.ClinicasRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamdos os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:SENAI.SPMedicalGroup.WebApi.Repositories.ConsultasRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamdos os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:SENAI.SPMedicalGroup.WebApi.Repositories.MedicosRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamdos os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:SENAI.SPMedicalGroup.WebApi.Repositories.PacientesRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamdos os métodos do EF Core
+            </summary>
+        </member>
+        <member name="F:SENAI.SPMedicalGroup.WebApi.Repositories.UsuariosRepository.ctx">
+            <summary>
+            Objeto contexto por onde serão chamdos os métodos do EF Core
+            </summary>
+        </member>
+    </members>
+</doc>

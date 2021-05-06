@@ -1,0 +1,80 @@
+CREATE DATABASE SPMedicalGroup;
+GO
+
+USE SPMedicalGroup;
+GO
+
+CREATE TABLE Especialidades(
+	idEspecialidade	INT PRIMARY KEY IDENTITY,
+	Nome			VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE Clinicas(
+	idClinica		INT PRIMARY KEY IDENTITY,
+	Nome			VARCHAR(100) NOT NULL,
+	CNPJ			CHAR(18) UNIQUE NOT NULL,
+	[Razão social]	VARCHAR(100) NOT NULL,
+	Logradouro		VARCHAR(100) NOT NULL,
+	[Número]		INT NOT NULL,
+	Cidade			VARCHAR(50) NOT NULL,
+	UF				CHAR(2) NOT NULL,
+);
+GO
+
+CREATE TABLE Situacoes(
+	idSituacao	INT PRIMARY KEY IDENTITY,
+	[Status]	VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE TipoUsuarios(
+	idTipo			INT PRIMARY KEY IDENTITY,
+	[Identificação]	VARCHAR(50) NOT NULL
+);
+GO
+
+CREATE TABLE Usuarios(
+	idUsuario	INT PRIMARY KEY IDENTITY,
+	idTipo		INT FOREIGN KEY REFERENCES TipoUsuarios (idTipo) NOT NULL,
+	Email		VARCHAR(150) UNIQUE NOT NULL,
+	Senha		VARCHAR(10) NOT NULL
+);
+GO
+
+CREATE TABLE Medicos(
+	idMedico		INT PRIMARY KEY IDENTITY,
+	idEspecialidade	INT FOREIGN KEY REFERENCES Especialidades (idEspecialidade) NOT NULL,
+	idClinica		INT FOREIGN KEY	REFERENCES Clinicas (idClinica) NOT NULL,
+	idUsuario		INT FOREIGN KEY	REFERENCES Usuarios (idUsuario) NOT NULL,
+	CRM				CHAR(8) UNIQUE NOT NULL,
+	Nome			VARCHAR(100) NOT NULL,
+);
+GO
+
+CREATE TABLE Pacientes(
+	idPaciente				INT PRIMARY KEY IDENTITY,
+	idUsuario				INT FOREIGN KEY	REFERENCES Usuarios (idUsuario) NOT NULL,
+	Nome					VARCHAR(100) NOT NULL,
+	[Data de nascimento]	DATE NOT NULL,
+	Telefone				CHAR(12),
+	RG						CHAR(9) UNIQUE NOT NULL,
+	CPF						CHAR(11) UNIQUE NOT NULL,
+	Logradouro				VARCHAR(100) NOT NULL,
+	[Número]				INT NOT NULL,
+	Bairro					VARCHAR(50),
+	Cidade					VARCHAR(50) NOT NULL,
+	UF						CHAR(2) NOT NULL,
+	CEP						CHAR(9),
+);
+GO
+
+CREATE TABLE Consultas(
+	idConsulta	INT PRIMARY KEY IDENTITY,
+	idPaciente	INT FOREIGN KEY	REFERENCES Pacientes (idPaciente) NOT NULL,
+	idMedico	INT FOREIGN KEY	REFERENCES Medicos (idMedico) NOT NULL,
+	idSituacao	INT FOREIGN KEY	REFERENCES Situacoes (idSituacao) DEFAULT(1) NOT NULL,
+	[Data]		DATETIME NOT NULL,	
+	[Descrição]	VARCHAR(500)
+);
+GO

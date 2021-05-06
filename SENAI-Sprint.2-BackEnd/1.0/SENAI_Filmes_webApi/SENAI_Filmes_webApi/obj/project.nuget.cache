@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "/857myh1djtJCX4OJ2OTdkIYsbDzYUidZe3bYiwoRuCDWjyH8oJtZrGTqwFR6l/0xRnOzTePKCgw/6/RN3e3mw==",
+  "dgSpecHash": "EyxYbTh9YReBY1zFbEJ2I0gXKwEKC5HAhhCg9GTRyme2bViKuyR2ELAjYZwjkYNXy3r3cOHtNKN8NdY02qgC/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\SENAI_filmes_webApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Flávia\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\system.data.sqlclient\\4.8.2\\system.data.sqlclient.4.8.2.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\Flávia\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SENAI_Filmes_webApi
+namespace SENAI_filmes_webApi
 {
     public class Program
     {

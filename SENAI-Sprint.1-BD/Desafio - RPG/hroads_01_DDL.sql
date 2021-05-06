@@ -1,46 +1,71 @@
 -- Criando o banco de dados
-Create Database SENAI_HROADS_MANHA;
+CREATE DATABASE SENAI_HROADS_MANHA;
+GO
 
 -- Selecionando o banco de dados
 Use SENAI_HROADS_MANHA;
+GO
 
--- Criando a tabela Tipo de Habilidade
-Create Table Tipo
+-- Criando a tabela Tipos de usuarios
+CREATE TABLE TiposDeUsuarios
 (
-	idTipo	INT Primary Key Identity,
-	Nome	Varchar(50) NOT NULL
+	idTipoDeUsuario	INT PRIMARY KEY IDENTITY,
+	Nome			VARCHAR(150) NOT NULL,
 );
+GO
+
+-- Ciando a tabela Usuarios
+CREATE TABLE Usuarios
+(
+	idUsuario	INT PRIMARY KEY IDENTITY,
+	email		VARCHAR(100) NOT NULL UNIQUE,
+	senha		VARCHAR(20) NOT NULL
+);
+GO
+
+-- Criando a tabela Tipos de Habilidades
+CREATE TABLE TiposDeHabilidades
+(
+	idTipoDeHabilidade	INT PRIMARY KEY IDENTITY,
+	Nome				VARCHAR(50) NOT NULL
+);
+GO
 
 -- Criando a tabela Habilidades
-Create table Habilidades
+CREATE TABLE Habilidades
 (
-	idHabilidades	INT Primary Key Identity,
-	Nome			Varchar(150) NOT NULL,
-	idTipo			INT Foreign Key References Tipo (idTipo) NOT NULL
+	idHabilidades			INT PRIMARY KEY IDENTITY,
+	Nome					VARCHAR(150) NOT NULL,
+	idTipoDeHabilidade		INT FOREIGN KEY REFERENCES TiposDeHabilidades (idTipoDeHabilidade) NOT NULL
 );
+GO
 
 -- Criando a tabela Classes
-Create table Classes
+CREATE TABLE Classes
 (
-	idClasse	INT Primary Key Identity,
-	Nome		Varchar(150) NOT NULL
+	idClasse	INT PRIMARY KEY IDENTITY,
+	Nome		VARCHAR(150) NOT NULL
 );
+GO
 
 -- Criando a tabela Classe Habilidades
-Create table ClasseHabilidade
+CREATE TABLE ClasseHabilidade
 (
-	idClasse		INT	Foreign Key References Classes (idClasse),
-	idHabilidades	INT	Foreign Key References Habilidades (idHabilidades)
+	idClasse		INT FOREIGN KEY REFERENCES Classes (idClasse),
+	idHabilidades	INT FOREIGN KEY REFERENCES Habilidades (idHabilidades)
 );
+GO
 
 -- Criando a tabela Personagens
-Create table Personagens
+CREATE TABLE Personagens
 (
-	idPersonagem				INT Primary Key Identity,
-	Nome						Varchar(150) NOT NULL,
+	idPersonagem				INT PRIMARY KEY IDENTITY,
+	Nome						VARCHAR(150) NOT NULL,
 	[Capacidade maxima Vida]	INT NOT NULL,
 	[Capacidade maxima Mana]	INT NOT NULL,
 	[Data de Atualização]		DATE NOT NULL,
 	[Data de criação]			DATE NOT NULL,
-	idClasse					INT Foreign Key References Classes (idClasse)
+	idClasse					INT FOREIGN KEY REFERENCES Classes (idClasse),
+	idUsuario					INT FOREIGN KEY REFERENCES Usuarios (idUsuario)
 );
+GO

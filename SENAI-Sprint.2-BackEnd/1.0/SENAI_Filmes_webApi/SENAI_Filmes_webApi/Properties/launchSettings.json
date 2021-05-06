@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:60254",
+      "applicationUrl": "http://localhost:6428",
       "sslPort": 0
     }
   },
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "SENAI_Filmes_webApi": {
+    "SENAI_filmes_webApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

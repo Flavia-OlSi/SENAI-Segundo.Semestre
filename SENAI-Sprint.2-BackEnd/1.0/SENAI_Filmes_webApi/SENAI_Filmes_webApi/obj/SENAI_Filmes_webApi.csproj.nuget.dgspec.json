@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi.csproj": {}
+    "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\SENAI_filmes_webApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi.csproj": {
+    "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\SENAI_filmes_webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi.csproj",
-        "projectName": "SENAI_Filmes_webApi",
-        "projectPath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi.csproj",
+        "projectUniqueName": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\SENAI_filmes_webApi.csproj",
+        "projectName": "SENAI_filmes_webApi",
+        "projectPath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\SENAI_filmes_webApi.csproj",
         "packagesPath": "C:\\Users\\Flávia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_Filmes_webApi\\obj\\",
+        "outputPath": "C:\\Users\\Flávia\\Documents\\Técnico\\Segundo semestre\\SENAI-Segundo.Semestre\\SENAI-Sprint.2-BackEnd\\1.0\\SENAI_Filmes_webApi\\SENAI_filmes_webApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Flávia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
