@@ -59,10 +59,10 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
 
                     // Armazena na Claim o id do usuário autenticado
-                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.idUsuario.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
 
                     // Armazena na Claim o id do tipo de usuário que foi autenticado
-                    new Claim(ClaimTypes.Role, usuarioBuscado.idTipo.ToString())
+                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTipo.ToString())
                 };
 
                 // Define a chave de acesso ao token

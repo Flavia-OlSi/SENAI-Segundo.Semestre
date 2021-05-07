@@ -56,6 +56,22 @@
             <param name="novaConsulta">Objeto novaConsulta que será cadastrada</param>
             <returns>Um status code 201 - Created</returns>
         </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.UpdateStatus(System.Int32,System.Int32)">
+            <summary>
+            Atualiza os status da consulta
+            </summary>
+            <param name="idConsulta">id da consulta que terá a situação atualizada</param>
+            <param name="idSituacao">id da nova situação dessa Consulta</param>
+            <returns>Um status code NoContent(204)</returns>
+        </member>
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.ConsultasController.AtualizarDescricao(System.Int32,SENAI.SPMedicalGroup.WebApi.Domains.Consultas)">
+            <summary>
+            Atualiza a descrição da consulta
+            </summary>
+            <param name="id">Id da Consulta que terá a descrição alterada</param>
+            <param name="consulta">Objeto Consulta com a descrição que será atribuida à Consulta atualizada</param>
+            <returns></returns>
+        </member>
         <member name="P:SENAI.SPMedicalGroup.WebApi.Controllers.LoginController._usuariosRepository">
             <summary>
             Objeto que irá definir todos os métodos definidos  na interface
@@ -76,12 +92,6 @@
             Instancia o objeto para que haja a referência aos métodos no repositório
             </summary>
         </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController.Get">
-            <summary>
-            Lista todos os médicos
-            </summary>
-            <returns>Retorna uma lista de médicos e um status code</returns>
-        </member>
         <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.MedicosController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Medicos)">
             <summary>
             Cadastra um novo médico
@@ -98,12 +108,6 @@
             <summary>
             Instancia o objeto para que haja a referência aos métodos no repositório
             </summary>
-        </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController.Get">
-            <summary>
-            Lista todos os pacientes
-            </summary>
-            <returns>Retorna uma lista de pacientes e um status code</returns>
         </member>
         <member name="M:SENAI.SPMedicalGroup.WebApi.Controllers.PacientesController.Post(SENAI.SPMedicalGroup.WebApi.Domains.Pacientes)">
             <summary>
@@ -129,46 +133,6 @@
             <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
             <returns>Um status code 201 - Created</returns>
         </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Clinicas">
-            <summary>
-            Classe que representa a entidade Clinicas
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Consultas">
-            <summary>
-            Classe que representa a entidade Consultas
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Especialidades">
-            <summary>
-            Classe que representa a entidade Especialidades
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Medicos">
-            <summary>
-            Classe que representa a entidade Medicos
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Pacientes">
-            <summary>
-            Classe que representa a entidade Pacientes
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Situacoes">
-            <summary>
-            Classe que representa a entidade Situações
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.TipoUsuarios">
-            <summary>
-            Classe que representa a entidade TipoUsuarios
-            </summary>
-        </member>
-        <member name="T:SENAI.SPMedicalGroup.WebApi.Domains.Usuarios">
-            <summary>
-            Classe que representa a entidade Usuarios
-            </summary>
-        </member>
         <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IClinicasRepository">
             <summary>
             Interface responsável pelo repositório ClinicasRepository
@@ -191,14 +155,14 @@
             </summary>
             <param name="novaConsulta">Objeto novaConsulta que será cadastrada</param>
         </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizarStatus(System.Int32,System.String)">
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizarStatus(System.Int32,System.Int32)">
             <summary>
             Atualiza os status da consulta
             </summary>
             <param name="id">id da consulta que será atualizada</param>
             <param name="statusAtualizado">Objeto status atualizado que será atualizado</param>
         </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizaDescricao(System.Int32,SENAI.SPMedicalGroup.WebApi.Domains.Consultas)">
+        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IConsultasRepository.AtualizaDescricao(System.Int32,System.String)">
             <summary>
             Atualiza a descrição da consulta
             </summary>
@@ -236,12 +200,6 @@
             </summary>
             <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
         </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IMedicosRepository.Listar">
-            <summary>
-            Lista todos os médicos
-            </summary>
-            <returns>Retorna uma lista de médicos</returns>
-        </member>
         <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IPacientesRepository">
             <summary>
             Interface responsável pelo repositório PacientesRepository
@@ -252,12 +210,6 @@
             Cadastra um novo paciente
             </summary>
             <param name="novoPaciente">Objeto novoPaciente que será cadastrado</param>
-        </member>
-        <member name="M:SENAI.SPMedicalGroup.WebApi.Interfaces.IPacientesRepository.Listar">
-            <summary>
-            Lista todos os pacientes
-            </summary>
-            <returns>Retorna uma lista de pacientes</returns>
         </member>
         <member name="T:SENAI.SPMedicalGroup.WebApi.Interfaces.IUsuariosRepository">
             <summary>

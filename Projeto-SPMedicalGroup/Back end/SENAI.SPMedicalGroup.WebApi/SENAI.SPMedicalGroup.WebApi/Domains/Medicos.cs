@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade Medicos
-    /// </summary>
     public partial class Medicos
     {
         public Medicos()
@@ -16,26 +13,26 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
             Consulta = new HashSet<Consultas>();
         }
 
-        public int idMedico { get; set; }
+        public int IdMedico { get; set; }
 
         [Required(ErrorMessage = "O idEspecialidade do medico é obrigatório!")]
-        public int idEspecialidade { get; set; }
+        public int IdEspecialidade { get; set; }
 
         [Required(ErrorMessage = "O idClinica do medico é obrigatório!")]
-        public int idClinica { get; set; }
+        public int IdClinica { get; set; }
 
         [Required(ErrorMessage = "O idUsuario do medico é obrigatório!")]
-        public int idUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
         [Required(ErrorMessage = "O CRM do medico é obrigatório!")]
-        public string CRM { get; set; }
+        public string Crm { get; set; }
 
         [Required(ErrorMessage = "O nome do medico é obrigatório!")]
         public string Nome { get; set; }
 
-        public virtual Clinicas idClinicaNavigation { get; set; }
-        public virtual Especialidades idEspecialidadeNavigation { get; set; }
-        public virtual Usuarios idUsuarioNavigation { get; set; }
+        public virtual Clinicas IdClinicaNavigation { get; set; }
+        public virtual Especialidades IdEspecialidadeNavigation { get; set; }
+        public virtual Usuarios IdUsuarioNavigation { get; set; }
         public virtual ICollection<Consultas> Consulta { get; set; }
     }
 }

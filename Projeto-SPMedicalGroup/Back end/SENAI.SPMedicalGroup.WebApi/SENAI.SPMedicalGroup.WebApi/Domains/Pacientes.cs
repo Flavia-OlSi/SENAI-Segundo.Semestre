@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade Pacientes
-    /// </summary>
     public partial class Pacientes
     {
         public Pacientes()
@@ -16,31 +13,31 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
             Consulta = new HashSet<Consultas>();
         }
 
-        public int idPaciente { get; set; }
+        public int IdPaciente { get; set; }
 
         [Required(ErrorMessage = "O idUsuario do paciente é obrigatório!")]
-        public int idUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
         [Required(ErrorMessage = "O nome do paciente é obrigatório!")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "a data de nascimento do paciente é obrigatório!")]
         [DataType(DataType.Date)]
-        public DateTime Data_de_nascimento { get; set; }
+        public DateTime DataDeNascimento { get; set; }
 
         public string Telefone { get; set; }
 
         [Required(ErrorMessage = "O RG do paciente é obrigatório!")]
-        public string RG { get; set; }
+        public string Rg { get; set; }
 
         [Required(ErrorMessage = "O CPF do paciente é obrigatório!")]
-        public string CPF { get; set; }
+        public string Cpf { get; set; }
 
         [Required(ErrorMessage = "O logradouro do paciente é obrigatório!")]
         public string Logradouro { get; set; }
 
         [Required(ErrorMessage = "O número do paciente é obrigatório!")]
-        public int Número { get; set; }
+        public int Numero { get; set; }
 
         public string Bairro { get; set; }
 
@@ -48,10 +45,12 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
         public string Cidade { get; set; }
 
         [Required(ErrorMessage = "O UF do paciente é obrigatório!")]
-        public string UF { get; set; }
-        public string CEP { get; set; }
+        public string Uf { get; set; }
 
-        public virtual Usuarios idUsuarioNavigation { get; set; }
+        public string Cep { get; set; }
+
+
+        public virtual Usuarios IdUsuarioNavigation { get; set; }
         public virtual ICollection<Consultas> Consulta { get; set; }
     }
 }

@@ -59,7 +59,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
         /// Lista todas as consultas por paciente
         /// </summary>
         /// <returns>Retorna uma lista de consultas e um status code</returns>
-        [Authorize(Roles = "1, 3")]
+        [Authorize(Roles = "3")]
         [HttpGet("paciente")]
         public IActionResult GetByPatient()
         {
@@ -86,7 +86,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
         /// Lista todas as consultas por médico
         /// </summary>
         /// <returns>Retorna uma lista de consultas e um status code</returns>
-        [Authorize(Roles = "1, 2")]
+        [Authorize(Roles = "2")]
         [HttpGet("medico")]
         public IActionResult GetByDoctor()
         {
@@ -125,6 +125,57 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
 
                 // Retorna um status code
                 return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+                // Retorna a exception e um status code 400 - Bad Request
+                return BadRequest(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Atualiza os status da consulta
+        /// </summary>
+        /// <param name="idConsulta">id da consulta que terá a situação atualizada</param>
+        /// <param name="idSituacao">id da nova situação dessa Consulta</param>
+        /// <returns>Um status code NoContent(204)</returns>
+        [Authorize(Roles = "1")]
+        [HttpPatch("{idConsulta}/{idSituacao}")]
+        public IActionResult UpdateStatus(int idConsulta, int idSituacao)
+        {
+            try
+            {
+                // Faz chamada para o método
+                _consultasRepository.AtualizarStatus(idConsulta, idSituacao);
+
+                // Retorna um status code
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                // Retorna a exception e um status code 400 - Bad Request
+                return BadRequest(ex);
+            }
+        }
+
+        /// <summary>
+        /// Atualiza a descrição da consulta
+        /// </summary>
+        /// <param name="id">Id da Consulta que terá a descrição alterada</param>
+        /// <param name="consulta">Objeto Consulta com a descrição que será atribuida à Consulta atualizada</param>
+        /// <returns></returns>
+        [Authorize(Roles = "3")]
+        [HttpPatch("{id}")]
+        public IActionResult AtualizarDescricao(int id, Consultas consulta)
+        {
+            try
+            {
+                // Faz chamada para o método
+                _consultasRepository.AtualizaDescricao(id, consulta.Descricao);
+
+                // Retorna um status code
+                return StatusCode(204);
             }
             catch (Exception ex)
             {

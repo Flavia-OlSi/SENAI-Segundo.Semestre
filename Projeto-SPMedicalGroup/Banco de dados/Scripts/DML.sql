@@ -21,18 +21,18 @@ VALUES						('Acupuntura'),
 							('Psiquiatria');
 GO
 
-INSERT INTO Clinicas	(Nome, CNPJ, [Razão social], Logradouro, [Número], Cidade, UF)
+INSERT INTO Clinicas	(Nome, CNPJ, RazaoSocial, Logradouro, Numero, Cidade, UF)
 VALUES					('Clinica Possarle', '86.400.902/0001-30', 'SP Medical Group', 'Av. Barão Limeira', 532, 'São Paulo', 'SP');
 GO
 
-INSERT INTO Situacoes	([Status])
+INSERT INTO Situacoes	(Status)
 VALUES					('Agendada'),
 						('Realizada'),
 						('Cancelada');
 GO
 
 
-INSERT INTO TipoUsuarios	([Identificação])
+INSERT INTO TipoUsuarios	(Identicacao)
 VALUES						('Administrador'),
 							('Médico'),
 							('Paciente');
@@ -58,7 +58,7 @@ VALUES				(2, 1, 2, '54356-SP', 'Ricardo Lemos'),
 					(16, 1, 4, '65463-SP', 'Helena Strada');
 GO				
 
-INSERT INTO Pacientes	(idUsuario, Nome, [Data de nascimento], Telefone, RG, CPF, Logradouro, [Número], Bairro, Cidade, UF, CEP)
+INSERT INTO Pacientes	(idUsuario, Nome, DataDeNascimento, Telefone, RG, CPF, Logradouro, Numero, Bairro, Cidade, UF, CEP)
 VALUES				(5, 'Ligia', '13/10/1983', '11 3456-7654', '435225435', '94839859000', 'Rua Estado de Israel', 240, null, 'São Paulo', 'SP', '04022-000'),
 					(6, 'Alexandre', '23/07/2001', '11 98765-6543', '326543457', '73556944057', 'Av. Paulista', 1578, 'Bela Vista', 'São Paulo', 'SP', '01310-200'),
 					(7, 'Fernanda', '10/10/1978', '11 97208-4453', '546365253', '16839338002', 'Av. Ibirapuera', 2927, 'Indianópolis', 'São Paulo', 'SP', '04029-200'),
@@ -68,7 +68,7 @@ VALUES				(5, 'Ligia', '13/10/1983', '11 3456-7654', '435225435', '94839859000',
 					(11, 'Mariana', '05/03/2018', null, '545662668', '13771913039', 'R Sao Antonio', 232, 'Vila Universal', 'São Paulo', 'SP', '06407-140');
 GO
 
-INSERT INTO Consultas	(IdPaciente, IdMedico, IdSituacao, [Data])
+INSERT INTO Consultas	(IdPaciente, IdMedico, IdSituacao, DataDeConsulta)
 VALUES					(7, 3, 2, '20/01/2020  15:00'),
 						(2, 2, 3, '06/01/2020  10:00'),
 						(3, 2, 2, '07/02/2020  11:00'),

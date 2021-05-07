@@ -6,20 +6,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade TipoUsuarios
-    /// </summary>
-    public partial class TipoUsuarios
+    public partial class TipoUsuario
     {
-        public TipoUsuarios()
+        public TipoUsuario()
         {
             Usuarios = new HashSet<Usuarios>();
         }
 
-        public int idTipo { get; set; }
+        public int IdTipo { get; set; }
 
         [Required(ErrorMessage = "A identificação do tipo de usuario é obrigatório!")]
-        public string Identificação { get; set; }
+        public string Identicacao { get; set; }
 
         public virtual ICollection<Usuarios> Usuarios { get; set; }
     }

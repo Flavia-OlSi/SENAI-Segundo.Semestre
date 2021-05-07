@@ -14,9 +14,9 @@ CREATE TABLE Clinicas(
 	idClinica		INT PRIMARY KEY IDENTITY,
 	Nome			VARCHAR(100) NOT NULL,
 	CNPJ			CHAR(18) UNIQUE NOT NULL,
-	[Razão social]	VARCHAR(100) NOT NULL,
+	RazaoSocial		VARCHAR(100) NOT NULL,
 	Logradouro		VARCHAR(100) NOT NULL,
-	[Número]		INT NOT NULL,
+	Numero			INT NOT NULL,
 	Cidade			VARCHAR(50) NOT NULL,
 	UF				CHAR(2) NOT NULL,
 );
@@ -30,7 +30,7 @@ GO
 
 CREATE TABLE TipoUsuarios(
 	idTipo			INT PRIMARY KEY IDENTITY,
-	[Identificação]	VARCHAR(50) NOT NULL
+	Identicacao	VARCHAR(50) NOT NULL
 );
 GO
 
@@ -56,12 +56,12 @@ CREATE TABLE Pacientes(
 	idPaciente				INT PRIMARY KEY IDENTITY,
 	idUsuario				INT FOREIGN KEY	REFERENCES Usuarios (idUsuario) NOT NULL,
 	Nome					VARCHAR(100) NOT NULL,
-	[Data de nascimento]	DATE NOT NULL,
-	Telefone				CHAR(12),
+	DataDeNascimento		DATE NOT NULL,
+	Telefone				VARCHAR(13),
 	RG						CHAR(9) UNIQUE NOT NULL,
 	CPF						CHAR(11) UNIQUE NOT NULL,
 	Logradouro				VARCHAR(100) NOT NULL,
-	[Número]				INT NOT NULL,
+	Numero				INT NOT NULL,
 	Bairro					VARCHAR(50),
 	Cidade					VARCHAR(50) NOT NULL,
 	UF						CHAR(2) NOT NULL,
@@ -70,11 +70,11 @@ CREATE TABLE Pacientes(
 GO
 
 CREATE TABLE Consultas(
-	idConsulta	INT PRIMARY KEY IDENTITY,
-	idPaciente	INT FOREIGN KEY	REFERENCES Pacientes (idPaciente) NOT NULL,
-	idMedico	INT FOREIGN KEY	REFERENCES Medicos (idMedico) NOT NULL,
-	idSituacao	INT FOREIGN KEY	REFERENCES Situacoes (idSituacao) DEFAULT(1) NOT NULL,
-	[Data]		DATETIME NOT NULL,	
-	[Descrição]	VARCHAR(500)
+	idConsulta			INT PRIMARY KEY IDENTITY,
+	idPaciente			INT FOREIGN KEY	REFERENCES Pacientes (idPaciente) NOT NULL,
+	idMedico			INT FOREIGN KEY	REFERENCES Medicos (idMedico) NOT NULL,
+	idSituacao			INT FOREIGN KEY	REFERENCES Situacoes (idSituacao) DEFAULT(1) NOT NULL,
+	DataDeConsulta		DATETIME NOT NULL,	
+	Descricao			VARCHAR(500)
 );
 GO

@@ -16,11 +16,5 @@ namespace SENAI.SPMedicalGroup.WebApi.Interfaces
         /// </summary>
         /// <param name="novoMedico">Objeto novoMedico que será cadastrado</param>
         void Cadastrar(Medicos novoMedico);
-
-        /// <summary>
-        /// Lista todos os médicos
-        /// </summary>
-        /// <returns>Retorna uma lista de médicos</returns>
-        List<Medicos> Listar();
     }
 }

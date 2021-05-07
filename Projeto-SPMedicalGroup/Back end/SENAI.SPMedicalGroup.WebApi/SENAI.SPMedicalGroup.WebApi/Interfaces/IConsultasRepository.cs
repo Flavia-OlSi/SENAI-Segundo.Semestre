@@ -23,14 +23,14 @@ namespace SENAI.SPMedicalGroup.WebApi.Interfaces
         /// </summary>
         /// <param name="id">id da consulta que será atualizada</param>
         /// <param name="statusAtualizado">Objeto status atualizado que será atualizado</param>
-        void AtualizarStatus(int id, string statusAtualizado);
+        void AtualizarStatus(int id, int statusAtualizado);
 
         /// <summary>
         /// Atualiza a descrição da consulta
         /// </summary>
         /// <param name="id">id da consulta que será atualizada</param>
         /// <param name="descricaoAtualizada">Objeto descrição que será atualizada</param>
-        void AtualizaDescricao(int id, Consultas descricaoAtualizada);
+        void AtualizaDescricao(int id, string descricaoAtualizada);
 
         /// <summary>
         /// Lista todas as consultas
@@ -50,7 +50,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Interfaces
         /// </summary>
         /// <param name="id">Objeto idMedico que identifica o medico desejado</param>
         /// <returns>Uma lista de consultas de um médico</returns>
-        List<Consultas> ListarPorMedico(int id);
+        List<Consultas> ListarPorMedico(int idUsuario);
 
     }
 }

@@ -15,13 +15,13 @@ SELECT * FROM Consultas;
 SELECT COUNT(IdUsuario) FROM Usuarios;
 
 -- Convertendo a data de nascimento do paciente (mm-dd-yyyy) calculando a idade também
-SELECT idUsuario, Nome,	convert(varchar, [Data de nascimento], 110) AS [Data de nascimento], DATEDIFF(year, [Data de nascimento], GETDATE()) AS [Idade], Telefone, RG, CPF, Logradouro, [Número], Bairro, Cidade, UF FROM Pacientes;
+SELECT idUsuario, Nome,	convert(varchar, DataDeNascimento, 110) AS [Data de nascimento], DATEDIFF(year, DataDeNascimento, GETDATE()) AS [Idade], Telefone, RG, CPF, Logradouro, Numero, Bairro, Cidade, UF FROM Pacientes;
 
 -- Visualizando a quantidade de médico por especialidade
 SELECT COUNT(idMedico) FROM Medicos WHERE idEspecialidade = 17;
 
 -- Visualizando a tabela Usuarios em conjunto com a TipoUsuarios
-SELECT idUsuario, Email, Senha, [Identificação] FROM Usuarios 
+SELECT idUsuario, Email, Senha, Identicacao FROM Usuarios 
 INNER JOIN	TipoUsuarios
 ON Usuarios.idTipo = TipoUsuarios.idTipo;
 
@@ -35,12 +35,12 @@ INNER JOIN	Usuarios
 ON Medicos.idUsuario = Usuarios.idUsuario;
 
 -- Visualizando a tabela Pacientes em conjunto com a tabela Usuario
-SELECT Nome, convert(varchar, [Data de nascimento], 110) AS [Data de nascimento], Telefone, RG, CPF, Logradouro, [Número], Bairro, Cidade, UF, Email, Senha  FROM Pacientes
+SELECT Nome, convert(varchar, DataDeNascimento, 110) AS DataDeNascimento, Telefone, RG, CPF, Logradouro, Numero, Bairro, Cidade, UF, Email, Senha  FROM Pacientes
 INNER JOIN	Usuarios
 ON Pacientes.idUsuario = Usuarios.idUsuario;
 
 -- Visualizando a tabela de Consultas em conjunto com a tabela Pacientes, Medicos e Situacoes
-SELECT Pacientes.Nome, [Data], Medicos.Nome, [Status] FROM Consultas
+SELECT Pacientes.Nome, DataDeConsulta, Medicos.Nome, Status FROM Consultas
 INNER JOIN	Pacientes
 ON Consultas.idPaciente = Pacientes.idPaciente
 INNER JOIN	Medicos

@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade Especialidades
-    /// </summary>
     public partial class Especialidades
     {
         public Especialidades()
@@ -16,7 +13,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
             Medicos = new HashSet<Medicos>();
         }
 
-        public int idEspecialidade { get; set; }
+        public int IdEspecialidade { get; set; }
 
         [Required(ErrorMessage = "O nome da especialidade é obrigatório!")]
         public string Nome { get; set; }

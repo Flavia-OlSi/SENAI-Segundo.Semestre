@@ -18,6 +18,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
     [Route("api/[controller]")]
 
     // Define que é um controlador de API
+    [Authorize(Roles = "1")]
     [ApiController]
     public class PacientesController : ControllerBase
     {
@@ -33,26 +34,6 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
         {
             _pacientesRepository = new PacientesRepository();
         }
-
-        /// <summary>
-        /// Lista todos os pacientes
-        /// </summary>
-        /// <returns>Retorna uma lista de pacientes e um status code</returns>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            try
-            {
-                // Retorna a resposta da requisição fazendo a chamada para o método
-                return Ok(_pacientesRepository.Listar());
-            }
-            catch(Exception ex)
-            {
-                // Retorna a exception e um status code 400 - Bad Request
-                return BadRequest(ex);
-            }
-        }
-
         /// <summary>
         /// Cadastra um novo paciente
         /// </summary>

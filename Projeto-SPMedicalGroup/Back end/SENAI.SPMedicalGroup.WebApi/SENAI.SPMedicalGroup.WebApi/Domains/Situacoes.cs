@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade Situações
-    /// </summary>
     public partial class Situacoes
     {
         public Situacoes()
@@ -16,7 +13,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
             Consulta = new HashSet<Consultas>();
         }
 
-        public int idSituacao { get; set; }
+        public int IdSituacao { get; set; }
 
         [Required(ErrorMessage = "O status da situação é obrigatório!")]
         public string Status { get; set; }

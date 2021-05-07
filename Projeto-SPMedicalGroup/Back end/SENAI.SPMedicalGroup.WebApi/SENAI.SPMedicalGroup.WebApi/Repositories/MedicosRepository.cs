@@ -21,10 +21,5 @@ namespace SENAI.SPMedicalGroup.WebApi.Repositories
 
             ctx.SaveChanges();
         }
-
-        public List<Medicos> Listar()
-        {
-            return ctx.Medicos.ToList();
-        }
     }
 }

@@ -33,26 +33,6 @@ namespace SENAI.SPMedicalGroup.WebApi.Controllers
         {
             _medicosRepository = new MedicosRepository();
         }
-
-        /// <summary>
-        /// Lista todos os médicos
-        /// </summary>
-        /// <returns>Retorna uma lista de médicos e um status code</returns>
-        [HttpGet]
-        public IActionResult Get()
-        {
-            try
-            {
-                // Retorna a resposta da requisição fazendo a chamada para o método
-                return Ok(_medicosRepository.Listar());
-            }
-            catch (Exception ex)
-            {
-                // Retorna a exception e um status code 400 - Bad Request
-                return BadRequest(ex);
-            }
-        }
-
         /// <summary>
         /// Cadastra um novo médico
         /// </summary>

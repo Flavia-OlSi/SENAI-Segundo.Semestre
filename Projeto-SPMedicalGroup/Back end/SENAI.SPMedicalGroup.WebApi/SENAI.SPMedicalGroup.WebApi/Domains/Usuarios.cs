@@ -6,9 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SENAI.SPMedicalGroup.WebApi.Domains
 {
-    /// <summary>
-    /// Classe que representa a entidade Usuarios
-    /// </summary>
     public partial class Usuarios
     {
         public Usuarios()
@@ -17,10 +14,10 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
             Pacientes = new HashSet<Pacientes>();
         }
 
-        public int idUsuario { get; set; }
+        public int IdUsuario { get; set; }
 
         [Required(ErrorMessage = "O idTipo do usuario é obrigatório!")]
-        public int idTipo { get; set; }
+        public int IdTipo { get; set; }
 
         [Required(ErrorMessage = "O email do usuario é obrigatório!")]
         public string Email { get; set; }
@@ -28,7 +25,7 @@ namespace SENAI.SPMedicalGroup.WebApi.Domains
         [Required(ErrorMessage = "A senha do usuario é obrigatório!")]
         public string Senha { get; set; }
 
-        public virtual TipoUsuarios idTipoNavigation { get; set; }
+        public virtual TipoUsuario IdTipoNavigation { get; set; }
         public virtual ICollection<Medicos> Medicos { get; set; }
         public virtual ICollection<Pacientes> Pacientes { get; set; }
     }

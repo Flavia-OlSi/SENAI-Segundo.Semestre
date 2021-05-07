@@ -30,14 +30,18 @@ namespace SENAI.SPMedicalGroup.WebApi.Repositories
             ctx.SaveChanges();
         }
 
-        public void AtualizaDescricao(int id, Consultas descricaoAtualizada)
+        public void AtualizarStatus(int id, int statusAtualizado)
         {
-            throw new NotImplementedException();
-        }
+            Consultas consulta = ctx.Consultas.Find(id);
 
-        public void AtualizarStatus(int id, string statusAtualizado)
-        {
-            throw new NotImplementedException();
+            if (consulta != null)
+            {
+                consulta.IdSituacao = statusAtualizado;
+            }
+
+            ctx.Consultas.Update(consulta);
+
+            ctx.SaveChanges();
         }
 
         public void Cadastrar(Consultas novaConsulta)
@@ -52,23 +56,29 @@ namespace SENAI.SPMedicalGroup.WebApi.Repositories
             return ctx.Consultas.ToList();
         }
 
-        public List<Consultas> ListarPorMedico(int id)
+        public List<Consultas> ListarPorMedico(int idUsuario)
         {
+
+            Medicos medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == idUsuario);
+
             return ctx.Consultas
-                .Include(c => c.idPacienteNavigation)
-                .Include(c => c.idMedicoNavigation)
-                .Include(c => c.idSituacaoNavigation)
-                .Where(c => c.idMedico == id)
+                .Include(c => c.IdPacienteNavigation)
+                .Include(c => c.IdMedicoNavigation)
+                .Include(c => c.IdSituacaoNavigation)
+                .Where(c => c.IdMedico == medico.IdMedico)
                 .ToList();
         }
 
-        public List<Consultas> ListarPorPaciente(int id)
+        public List<Consultas> ListarPorPaciente(int idUsuario)
         {
+
+            Pacientes paciente = ctx.Pacientes.FirstOrDefault(x => x.IdUsuario == idUsuario);
+
             return ctx.Consultas
-                 .Include(c => c.idPacienteNavigation)
-                 .Include(c => c.idMedicoNavigation)
-                 .Include(c => c.idSituacaoNavigation)
-                 .Where(c => c.idPaciente == id)
+                 .Include(c => c.IdPacienteNavigation)
+                 .Include(c => c.IdMedicoNavigation)
+                 .Include(c => c.IdSituacaoNavigation)
+                 .Where(c => c.IdPaciente == paciente.IdPaciente)
                  .ToList();
         }
     }
